@@ -6,32 +6,33 @@
   --white: #ffffff;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 #container {
   background-color: var(--secondary);
   height: 100vh;
 }
 
 #game-container {
-  margin: 2rem 1rem;
-  padding: 1rem 1rem;
+  margin: 1rem 1rem;
   background-color: var(--primary);
 }
 
 #players {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  padding: 1.5rem 0;
+  gap: 1rem;
 }
 
 @media screen and (min-width: 768px) {
   #game-container {
     max-width: 70%;
     margin: 2rem auto;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #game-container {
+    max-width: 50%;
   }
 }
