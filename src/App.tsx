@@ -66,7 +66,7 @@ const determineWinner = (
       }
     }
   }
-  console.log("WINNER! ", winner);
+
   return winner;
 };
 
