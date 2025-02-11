@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import { WINNING_COMBOS } from "./data/winningCombinations";
 
 /* Components */
 import Header from "./components/Header/Header";
@@ -41,6 +42,33 @@ const getCurrentPlayer = (gameTurns: Turn[]): string => {
   return currentPlayer;
 };
 
+const determineWinner = (
+  updatedBoard: Board,
+  playersNames: PlayersNames
+): string => {
+  let winner = "";
+
+  for (const combination of WINNING_COMBOS) {
+    const firstCellSymbol =
+      updatedBoard[combination[0].row][combination[0].col];
+    const secondCellSymbol =
+      updatedBoard[combination[1].row][combination[1].col];
+    const thirdCellSymbol =
+      updatedBoard[combination[2].row][combination[2].col];
+
+    if (
+      firstCellSymbol &&
+      firstCellSymbol === secondCellSymbol &&
+      firstCellSymbol === thirdCellSymbol
+    ) {
+      if (firstCellSymbol === "X" || firstCellSymbol === "O") {
+        winner = playersNames[firstCellSymbol as keyof PlayersNames];
+      }
+    }
+  }
+  return winner;
+};
+
 function App() {
   const [playerNames, setPlayerNames] = useState<PlayersNames>(players);
   const [gameTurns, setGameTurns] = useState<Turn[]>([]);
@@ -48,11 +76,9 @@ function App() {
   // make a deep copy of initialBoard
   let board = generateGameBoard(gameTurns);
   const currentPlayer = getCurrentPlayer(gameTurns);
+  const winner = determineWinner(board, playerNames);
 
   function handleSelectCell(row: number, col: number): void {
-    console.log(row, "ROW");
-    console.log(col, "COL");
-
     setGameTurns((prev) => {
       const updatedTurns = [
         { player: currentPlayer, row: row, col: col },
@@ -62,8 +88,6 @@ function App() {
       return updatedTurns;
     });
   }
-
-  console.log(board);
 
   return (
     <div id="container">
@@ -83,6 +107,9 @@ function App() {
             setPlayerNames={setPlayerNames}
           />
         </section>
+        {winner && (
+          <h2>{playerNames[currentPlayer as keyof PlayersNames]} WON!!</h2>
+        )}
         <GameBoard board={board} onSelectCell={handleSelectCell} />
       </main>
     </div>
