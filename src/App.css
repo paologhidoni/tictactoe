@@ -4,15 +4,21 @@
   --yellow: #f7ec59;
   --black: #000000;
   --white: #ffffff;
+  --pink: #ff66d8;
+  --light-blue: #33a1fd;
 }
 
 #container {
   background-color: var(--secondary);
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 #game-container {
-  margin: 1rem 1rem;
+  width: calc(100% - 2rem);
+  max-width: 100%;
+  margin: 1rem auto;
   background-color: var(--primary);
 }
 
