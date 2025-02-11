@@ -11,7 +11,7 @@
 
 .player-container.active {
   border: 2px solid var(--yellow);
-  background-color: var(--black);
+  background-color: rgba(var(--black));
   color: var(--white);
 }
 
@@ -38,14 +38,14 @@
 
 .player-container button {
   padding: 5px;
-  border: 2px solid var(--black);
-  background-color: var(--black);
+  border: 2px solid rgba(var(--black));
+  background-color: rgba(var(--black));
   cursor: pointer;
   color: var(--white);
 }
 
 .player-container input {
-  border: 2px solid var(--black);
+  border: 2px solid rgba(var(--black));
   background-color: var(--white);
   padding: 10px 5px;
   width: 100px;
