@@ -35,7 +35,9 @@ const generateGameBoard = (gameTurns: Turn[]): Board => {
 const getCurrentPlayer = (gameTurns: Turn[]): string => {
   const randomNumber = Math.floor(Math.random() * 2) + 1;
   let currentPlayer = randomNumber === 1 ? "X" : "O";
-  currentPlayer = gameTurns.length && gameTurns[0].player === "X" ? "O" : "X";
+  if (gameTurns.length) {
+    currentPlayer = gameTurns[0].player === "X" ? "O" : "X";
+  }
   return currentPlayer;
 };
 
