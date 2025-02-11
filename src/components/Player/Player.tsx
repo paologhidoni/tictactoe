@@ -35,8 +35,8 @@ const Player: React.FC<Props> = ({
 
   return (
     <section className={`player-container ${isActive ? "active" : ""}`}>
-      <div className="playerIdentity">
-        {!isEditing && <span className="playerName">{playerName}</span>}
+      <div className="player-identity">
+        {!isEditing && <span className="player-name">{playerName}</span>}
         {isEditing && (
           <input
             type="text"
@@ -44,7 +44,7 @@ const Player: React.FC<Props> = ({
             onChange={(e) => handleEditPlayer(e)}
           />
         )}
-        <span className="playerSymbol">{symbol}</span>
+        <span className="player-symbol">{symbol}</span>
       </div>
 
       <button onClick={handleIsEditing}>{isEditing ? "Save" : "Edit"}</button>

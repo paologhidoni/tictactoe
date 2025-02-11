@@ -28,8 +28,19 @@
 .row button {
   width: 60px;
   height: 60px;
+  background: var(--white);
+  border: none;
   cursor: pointer;
   font-size: 3rem;
+  color: black;
+}
+
+.row button.selected-X {
+  border: 3px solid var(--pink);
+}
+
+.row button.selected-O {
+  border: 3px solid var(--light-blue);
 }
 
 @media screen and (min-width: 600px) {

@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  border: 2px solid transparent;
+  border: 2px solid black;
 }
 
 .player-container.active {
@@ -19,20 +19,20 @@
   border: 2px solid var(--white);
 }
 
-.playerIdentity {
+.player-identity {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 1rem;
 }
 
-.playerName,
-.playerSymbol {
+.player-name,
+.player-symbol {
   text-transform: uppercase;
   padding: 10px 5px;
 }
 
-.playerName {
+.player-name {
   width: 100px;
 }
 
