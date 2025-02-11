@@ -66,6 +66,7 @@ const determineWinner = (
       }
     }
   }
+  console.log("WINNER! ", winner);
   return winner;
 };
 
@@ -107,9 +108,7 @@ function App() {
             setPlayerNames={setPlayerNames}
           />
         </section>
-        {winner && (
-          <h2>{playerNames[currentPlayer as keyof PlayersNames]} WON!!</h2>
-        )}
+        {winner && <h2>{winner} WON!!</h2>}
         <GameBoard board={board} onSelectCell={handleSelectCell} />
       </main>
     </div>
