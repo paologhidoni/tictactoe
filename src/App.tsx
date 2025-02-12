@@ -6,6 +6,7 @@ import { WINNING_COMBOS } from "./data/winningCombinations";
 import Header from "./components/Header/Header";
 import Player from "./components/Player/Player";
 import GameBoard from "./components/GameBoard/GameBoard";
+import GameOver from "./components/GameOver/GameOver";
 
 /* Models */
 import { PlayersNames } from "./models/PlayersNames";
@@ -78,6 +79,7 @@ function App() {
   let board = generateGameBoard(gameTurns);
   const currentPlayer = getCurrentPlayer(gameTurns);
   const winner = determineWinner(board, playerNames);
+  const isDraw = gameTurns.length === 9 && !winner;
 
   function handleSelectCell(row: number, col: number): void {
     setGameTurns((prev) => {
@@ -88,6 +90,12 @@ function App() {
 
       return updatedTurns;
     });
+  }
+
+  function resetGame() {
+    console.log("RESET!");
+    setGameTurns([]);
+    setPlayerNames(players);
   }
 
   return (
@@ -108,7 +116,9 @@ function App() {
             setPlayerNames={setPlayerNames}
           />
         </section>
-        {winner && <h2>{winner} WON!!</h2>}
+        {(winner || isDraw) && (
+          <GameOver winner={winner} onResetGame={resetGame} />
+        )}
         <GameBoard board={board} onSelectCell={handleSelectCell} />
       </main>
     </div>
