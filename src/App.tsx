@@ -69,13 +69,13 @@ const determineWinner = (
 };
 
 function App() {
-  const [playerNames, setPlayerNames] = useState<PlayersNames>(players);
+  const [playersNames, setPlayerNames] = useState<PlayersNames>(players);
   const [gameTurns, setGameTurns] = useState<Turn[]>([]);
 
   // make a deep copy of initialBoard
   let board = generateGameBoard(gameTurns);
   const currentPlayer = getCurrentPlayer(gameTurns);
-  const winner = determineWinner(board, playerNames);
+  const winner = determineWinner(board, playersNames);
   const isDraw = gameTurns.length === 9 && !winner;
 
   function handleSelectCell(row: number, col: number): void {
@@ -100,15 +100,15 @@ function App() {
       <main id="game-container">
         <section id="players">
           <Player
-            name={playerNames.X}
             symbol="X"
             isActive={currentPlayer === "X"}
+            playersNames={playersNames}
             setPlayerNames={setPlayerNames}
           />
           <Player
-            name={playerNames.O}
             symbol="O"
             isActive={currentPlayer === "O"}
+            playersNames={playersNames}
             setPlayerNames={setPlayerNames}
           />
         </section>
