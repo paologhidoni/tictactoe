@@ -20,7 +20,7 @@
   color: var(--white);
   left: -35px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(calc(-50% - 0.1rem));
 }
 
 #logs span {

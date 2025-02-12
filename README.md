@@ -2,7 +2,10 @@
 
 This is a simple Tic Tac Toe game built using React and TypeScript. The game features a player vs player mode, where two players can take turns to place their marks (X and O) on the board. The game automatically detects when there is a winner or a draw and allows players to reset the game. [Click here to play live.](https://paologhidoni.github.io/tictactoe/)
 
-![Tic Tac Toe Screenshot](./public/tictactoe.png)
+<div>
+  <img src="./public/tictactoe.png" style="max-width: 65%; height: auto;" />
+  <img src="./public/tictactoe-sm.png" style="max-width: 20%; height: auto; float: right" />
+</div>
 
 ## Technologies Used
 
