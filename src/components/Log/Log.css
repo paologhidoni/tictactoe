@@ -19,7 +19,8 @@
   font-size: 1.5rem;
   color: var(--white);
   left: -35px;
-  top: -4px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #logs span {

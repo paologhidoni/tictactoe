@@ -4,7 +4,7 @@ header {
 }
 
 img {
-  max-width: 11rem;
+  max-width: 8rem;
 }
 
 .sr-only {
@@ -17,4 +17,10 @@ img {
   clip: rect(0, 0, 0, 0);
   border: 0;
   white-space: nowrap;
+}
+
+@media screen and (min-width: 768px) {
+  img {
+    max-width: 11rem;
+  }
 }
