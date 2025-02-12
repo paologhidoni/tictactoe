@@ -17,8 +17,8 @@ const Log: React.FC<Props> = ({ turns }) => {
               turn.player === "X" ? "turn-X-style" : "turn-O-style"
             }`}
           >
-            <span>{turn.player}</span> played row <span>{turn.row}</span>,
-            column <span>{turn.col}</span>
+            <span>{turn.player}</span> played row <span>{turn.row + 1}</span>,
+            column <span>{turn.col + 1}</span>
           </p>
         ))}
     </section>
