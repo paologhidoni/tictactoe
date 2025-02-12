@@ -3,20 +3,21 @@ import "./Player.css";
 import { PlayersNames } from "../../models/PlayersNames";
 
 interface Props {
-  name: string;
   symbol: string;
   isActive: boolean;
+  playersNames: PlayersNames;
   setPlayerNames: Dispatch<SetStateAction<PlayersNames>>;
 }
 
 const Player: React.FC<Props> = ({
   symbol,
-  name,
   isActive,
+  playersNames,
   setPlayerNames,
 }) => {
   const [isEditing, setIsEditing] = useState<boolean>(false);
-  const [playerName, setPlayerName] = useState<string>(name);
+
+  const playerName = playersNames[symbol as keyof PlayersNames];
 
   function handleIsEditing() {
     setIsEditing((prev) => !prev);
@@ -24,7 +25,6 @@ const Player: React.FC<Props> = ({
 
   function handleEditPlayer(e: React.ChangeEvent<HTMLInputElement>) {
     const newName = e.target.value;
-    setPlayerName(newName);
     setPlayerNames((prevState: PlayersNames) => {
       return {
         ...prevState,
