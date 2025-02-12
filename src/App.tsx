@@ -1,12 +1,14 @@
 import { useState } from "react";
 import "./App.css";
 import { WINNING_COMBOS } from "./data/winningCombinations";
+import { v4 as uuidv4 } from "uuid";
 
 /* Components */
 import Header from "./components/Header/Header";
 import Player from "./components/Player/Player";
 import GameBoard from "./components/GameBoard/GameBoard";
 import GameOver from "./components/GameOver/GameOver";
+import Log from "./components/Log/Log";
 
 /* Models */
 import { PlayersNames } from "./models/PlayersNames";
@@ -35,12 +37,7 @@ const generateGameBoard = (gameTurns: Turn[]): Board => {
 };
 
 const getCurrentPlayer = (gameTurns: Turn[]): string => {
-  const randomNumber = Math.floor(Math.random() * 2) + 1;
-  let currentPlayer = randomNumber === 1 ? "X" : "O";
-  if (gameTurns.length) {
-    currentPlayer = gameTurns[0].player === "X" ? "O" : "X";
-  }
-  return currentPlayer;
+  return gameTurns.length ? (gameTurns[0].player === "X" ? "O" : "X") : "X";
 };
 
 const determineWinner = (
@@ -84,7 +81,7 @@ function App() {
   function handleSelectCell(row: number, col: number): void {
     setGameTurns((prev) => {
       const updatedTurns = [
-        { player: currentPlayer, row: row, col: col },
+        { id: uuidv4(), player: currentPlayer, row: row, col: col },
         ...prev,
       ];
 
@@ -93,7 +90,6 @@ function App() {
   }
 
   function resetGame() {
-    console.log("RESET!");
     setGameTurns([]);
     setPlayerNames(players);
   }
@@ -121,6 +117,7 @@ function App() {
         )}
         <GameBoard board={board} onSelectCell={handleSelectCell} />
       </main>
+      <Log turns={gameTurns} />
     </div>
   );
 }
