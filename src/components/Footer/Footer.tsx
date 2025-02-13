@@ -1,6 +1,7 @@
 import React from "react";
 import { Turn } from "../../models/Turn";
 import Log from "../Log/Log";
+import "./Footer.css";
 
 interface Props {
   gameTurns: Turn[];
