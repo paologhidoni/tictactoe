@@ -3,8 +3,9 @@
 This is a simple Tic Tac Toe game built using React and TypeScript. The game features a player vs player mode, where two players can take turns to place their marks (X and O) on the board. The game automatically detects when there is a winner or a draw and allows players to reset the game. [Click here to play live.](https://paologhidoni.github.io/tictactoe/)
 
 <div>
-  <img src="./public/tictactoe.png" style="max-width: 65%; height: auto;" />
-  <img src="./public/tictactoe-sm.png" style="max-width: 20%; height: auto; float: right" />
+  <img src="./public/tictactoe.png" style="max-width: 300px;" />
+  <img src="./public/tictactoe-sm.png" style="max-width: 150px;" />
+  <img src="./public/tictactoewon-sm.png" style="max-width: 150px;" />
 </div>
 
 ## Technologies Used
@@ -54,6 +55,8 @@ npm run dev
 - **GameBoard**: The 3x3 grid where players interact and place their marks.
 - **GameOver**: Displays the winner or draw message and includes a button to reset the game.
 - **Log**: Displays the history of moves made during the game.
+- **MusicPlayer**: It includes a hidden html audio tag to play a chillout mp3 track, and an icon that serves as button to toggle the music on and off.
+- **Footer**: It contains the Logs and MusicPlayer components, other than the credits to the music artist.
 
 ### How to Play
 
@@ -63,3 +66,4 @@ npm run dev
 - Players take turns to click on an empty cell to place their mark.
 - The game ends when a player wins or the game results in a draw (when all cells are filled).
 - You can reset the game by clicking the "Play again!" button.
+- You can toggle the music on and off by clicking the audio icon at the top right corner.
