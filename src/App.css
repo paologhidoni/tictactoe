@@ -30,6 +30,7 @@
   max-width: 100%;
   margin: 1rem auto;
   background-color: var(--primary);
+  flex-grow: 1;
 }
 
 #players {
