@@ -1,10 +1,12 @@
 header {
   text-align: center;
   background-color: var(--primary);
+  position: relative;
 }
 
 img {
   max-width: 8rem;
+  margin: 0 auto;
 }
 
 .sr-only {

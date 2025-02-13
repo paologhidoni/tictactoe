@@ -9,6 +9,7 @@ import Player from "./components/Player/Player";
 import GameBoard from "./components/GameBoard/GameBoard";
 import GameOver from "./components/GameOver/GameOver";
 import Log from "./components/Log/Log";
+import Footer from "./components/Footer/Footer";
 
 /* Models */
 import { PlayersNames } from "./models/PlayersNames";
@@ -117,7 +118,8 @@ function App() {
         )}
         <GameBoard board={board} onSelectCell={handleSelectCell} />
       </main>
-      <Log turns={gameTurns} />
+
+      <Footer gameTurns={gameTurns} />
     </div>
   );
 }
