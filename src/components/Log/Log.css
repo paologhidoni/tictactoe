@@ -26,7 +26,6 @@
 #logs span {
   font-weight: bold;
   font-style: italic;
-  font-size: 1.2rem;
 }
 
 .turn-X-style span {
@@ -35,6 +34,12 @@
 
 .turn-O-style span {
   color: var(--light-blue);
+}
+
+@media screen and (min-width: 768px) {
+  #logs span {
+    font-size: 1.2rem;
+  }
 }
 
 @keyframes slideDown {

@@ -1,0 +1,11 @@
+.music-artist-link,
+.music-artist-link a {
+  margin-top: 5rem;
+  font-size: 0.7rem;
+  color: white;
+  text-align: center;
+}
+
+footer {
+  padding: 0 0.5rem 2rem 0.5rem;
+}
