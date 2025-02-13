@@ -3,7 +3,7 @@ import audioFile from "../../assets/once-in-paris-168895.mp3";
 import { HiSpeakerWave, HiSpeakerXMark } from "react-icons/hi2";
 import "./MusicPlayer.css";
 
-const MusicPlayer: React.FC = (props) => {
+const MusicPlayer: React.FC = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
